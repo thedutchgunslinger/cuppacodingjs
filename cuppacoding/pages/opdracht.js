@@ -59,8 +59,9 @@ export default function Opdracht() {
           <ReactMarkdown
             className={mdStyles.container}
             components={components}
-            children={markdown}
-          />
+          >
+            {markdown}
+            </ReactMarkdown>
         </div>
       </div>
     </>

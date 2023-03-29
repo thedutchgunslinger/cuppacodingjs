@@ -1,10 +1,11 @@
 import LangStyle from "../styles/lang.module.css";
 
 export default function Languages({ lang }) {
+    let key = 0;
   return (
     <div className={LangStyle.container}>
       {lang.map((language) => {
-        return <div key={lang}>{giveIcon(language)}</div>;
+        return <div key={key++}>{giveIcon(language)}</div>;
       })}
     </div>
   );
@@ -14,7 +15,7 @@ function giveIcon(lang) {
   switch (lang) {
     case "python":
       return (
-        <div className={LangStyle.tooltip}>
+        <div key={lang} className={LangStyle.tooltip}>
           <span className={LangStyle.tooltiptext}>{lang}</span>
           <svg
             width="28"

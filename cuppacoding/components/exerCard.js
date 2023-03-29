@@ -19,7 +19,7 @@ export default function ExerCard({
     }
     
   return (
-    <Link href={`/#${id}`} className={style.noline}>
+    <Link href={`/opdracht?id=${id}`} className={style.noline}>
       <div className={`${style.container}`} data-level={level}>
         <h1 className={style.title}>{title}</h1>
         <p className={style.module}>{module}</p>
@@ -52,7 +52,9 @@ export default function ExerCard({
           </svg>
           <p>{level}</p>
         </div>
-        <div className={style.description}>{description}</div>
+        <div className={style.description}>
+          <p>{description}</p>
+        </div>
         <Languages lang={lang} />
       </div>
     </Link>

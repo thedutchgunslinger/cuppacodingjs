@@ -1,7 +1,7 @@
 import LangStyle from "../styles/lang.module.css";
 
 export default function Languages({ lang }) {
-    let key = 0;
+    let key = 0;    
   return (
     <div className={LangStyle.container}>
       {lang.map((language) => {

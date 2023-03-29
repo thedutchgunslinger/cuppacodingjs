@@ -1,4 +1,5 @@
 import ExerCardStyle from "../styles/exerCard.module.css";
+import ExerListStyle from "../styles/exerList.module.css";
 import Languages from "./languages";
 import Link from "next/link";
 
@@ -10,13 +11,19 @@ export default function ExerCard({
   time,
   description,
   lang,
+  list
 }) {
+    let style = ExerCardStyle;
+    if(list){
+     style = ExerListStyle;
+    }
+    
   return (
-    <Link href={`/#${id}`} className={ExerCardStyle.noline}>
-      <div className={`${ExerCardStyle.container}`} data-level={level}>
-        <h1 className={ExerCardStyle.title}>{title}</h1>
-        <p className={ExerCardStyle.module}>{module}</p>
-        <div className={ExerCardStyle.time}>
+    <Link href={`/#${id}`} className={style.noline}>
+      <div className={`${style.container}`} data-level={level}>
+        <h1 className={style.title}>{title}</h1>
+        <p className={style.module}>{module}</p>
+        <div className={style.time}>
           <svg
             width="21"
             height="21"
@@ -45,7 +52,7 @@ export default function ExerCard({
           </svg>
           <p>{level}</p>
         </div>
-        <div className={ExerCardStyle.description}>{description}</div>
+        <div className={style.description}>{description}</div>
         <Languages lang={lang} />
       </div>
     </Link>

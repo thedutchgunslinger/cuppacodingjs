@@ -6,3 +6,18 @@
     flex-wrap: wrap;
     padding-bottom: 100px;
 }
+
+.toggleView {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.25));
+    transition: all 0.2s ease-in-out;
+}
+
+.toggleView:hover svg{
+    scale: 1.1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}

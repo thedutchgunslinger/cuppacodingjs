@@ -4,7 +4,7 @@ export default function Languages({ lang }) {
   return (
     <div className={LangStyle.container}>
       {lang.map((language) => {
-        return <div>{giveIcon(language)}</div>;
+        return <div key={lang}>{giveIcon(language)}</div>;
       })}
     </div>
   );

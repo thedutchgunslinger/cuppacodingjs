@@ -1,0 +1,11 @@
+.container pre{
+  display: inline-block;
+  width: auto;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.container p {
+  /* display: inline-block; */
+  vertical-align: middle;
+}

@@ -1,0 +1,30 @@
+.container {
+ /* background-color: hotpink; */
+ padding: 1rem;
+ border-radius: 20px 20px 0 0;
+ padding-bottom: 100px;
+}
+.container[data-level="1"] {
+  background-color: #eecdcd;
+}
+.container[data-level="2"] {
+  background-color: #f8e5ce;
+}
+.container[data-level="3"] {
+  background-color: #fcf2ce;
+}
+.container[data-level="4"] {
+  background-color: #dbe9d4;
+}
+.container[data-level="5"] {
+  background-color: #d3e2f2;
+}
+.container[data-level="6"] {
+  background-color: #cddaf7;
+}
+.container[data-level="7"] {
+  background-color: #d8d2e8;
+}
+.container[data-level="8"] {
+  background-color: #e6d2dc;
+}

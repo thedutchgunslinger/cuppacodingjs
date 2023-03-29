@@ -55,7 +55,10 @@ export default function ExerCard({
         <div className={style.description}>
           <p>{description}</p>
         </div>
+        <div className={style.icons}>
+
         <Languages lang={lang} />
+        </div>
       </div>
     </Link>
   );

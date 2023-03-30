@@ -26,7 +26,7 @@ const CodeBlock = (props) => {
   console.log(value);
   return (
     <>
-    <SyntaxHighlighter  style={vscDarkPlus} language={getLanguage(className)} value={value}>{children}</SyntaxHighlighter>
+    <SyntaxHighlighter  style={vscDarkPlus} language={getLanguage(className)}>{children}</SyntaxHighlighter>
 
     </>
   );

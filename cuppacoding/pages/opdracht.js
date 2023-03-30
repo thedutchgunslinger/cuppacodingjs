@@ -4,7 +4,7 @@ import Nav from "@/components/nav";
 import HomeStyle from "@/styles/home.module.css";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import  vscDarkPlus  from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
+// import  vscDarkPlus  from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import mdStyles from "@/styles/mdStyles.module.css";
 import opdrachtStyles from "@/styles/opdrachtStyles.module.css";
 
@@ -26,7 +26,7 @@ const CodeBlock = (props) => {
   console.log(value);
   return (
     <>
-    <SyntaxHighlighter  style={vscDarkPlus} language={getLanguage(className)}>{children}</SyntaxHighlighter>
+    <SyntaxHighlighter   language={getLanguage(className)}>{children}</SyntaxHighlighter>
 
     </>
   );

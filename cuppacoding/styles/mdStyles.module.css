@@ -10,7 +10,41 @@
   vertical-align: middle;
 }
 
-.container pre, .container p pre, .container pre pre, .container pre pre code{
-  background-color: #1e1e1e;
+.codeContainer {
+  display: inline-block;
+  position: relative;
 }
 
+.codeContainer label {
+
+  min-width: 90px;
+  bottom: 100%;
+  left: 50%;
+  translate: -50%;
+  background-color: var(--highlight-color);
+  color: #000;
+  text-align: center;
+  padding: 5px 15px;
+  border-radius: 6px;
+  opacity: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+animation: 'fadeout 1s ease-in-out forwards';
+/*   
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  background-color: #fff;
+  padding: 0 5px; */
+  font-family: 'Poppins', sans-serif;
+}
+
+.codeContainer label:empty {
+  opacity: 0;
+  visibility: hidden;
+}

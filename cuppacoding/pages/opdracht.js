@@ -7,6 +7,8 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import  vscDarkPlus  from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
 import mdStyles from "@/styles/mdStyles.module.css";
 import opdrachtStyles from "@/styles/opdrachtStyles.module.css";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState, useEffect } from "react";
 
 
 function getLanguage(string) {
@@ -19,16 +21,30 @@ function getLanguage(string) {
   }
   return parts[1];
 }
-
 const CodeBlock = (props) => {
   const { language, value, children,className } = props;
+   const [copied, setCopied] = useState(false);
+
+  
+
   console.log(props);
   console.log(value);
   return (
-    <>
-    <SyntaxHighlighter  style={vscDarkPlus} language={getLanguage(className)}>{children}</SyntaxHighlighter>
-
-    </>
+    <div className={mdStyles.codeContainer}>
+      <label>{copied ? "Copied!" : ""}</label>
+      <CopyToClipboard text={children} onCopy={() => {setCopied(true); const timer = setTimeout(() => {
+        setCopied(false);
+      }, 3000);}}>
+        <SyntaxHighlighter
+          wrapLines={true} // wrap long lines
+          howInlineLineNumbers={false}
+          style={vscDarkPlus}
+          language={getLanguage(className)}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </CopyToClipboard>
+    </div>
   );
 };
 

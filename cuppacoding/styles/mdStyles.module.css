@@ -9,3 +9,8 @@
   /* display: inline-block; */
   vertical-align: middle;
 }
+
+.container pre, .container p pre, .container pre pre, .container pre pre code{
+  background-color: #1e1e1e;
+}
+

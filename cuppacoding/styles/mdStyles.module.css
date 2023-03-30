@@ -5,6 +5,24 @@
   vertical-align: middle;
 }
 
+.container pre::after {
+  content: 'Copy';
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+}
+
+.container pre:hover::after {
+  content: 'Copy';
+  position: absolute;
+  top: 6px;
+  right: 5px; 
+  opacity: 0.7;
+}
+
 .container p {
   /* display: inline-block; */
   vertical-align: middle;
@@ -34,7 +52,7 @@
   position: absolute;
   z-index: 1;
   transition: all 0.2s ease-in-out;
-animation: 'fadeout 1s ease-in-out forwards';
+
 /*   
   position: absolute;
   top: -20px;

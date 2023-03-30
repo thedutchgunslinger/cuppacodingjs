@@ -20,7 +20,7 @@ export default function ExerCard({
     
   return (
     <Link href={`/opdracht?id=${id}`} className={style.noline}>
-      <div className={`${style.container}`} data-level={level}>
+      <div className={style.container} data-level={level}>
         <h1 className={style.title}>{title}</h1>
         <p className={style.module}>{module}</p>
         <div className={style.time}>

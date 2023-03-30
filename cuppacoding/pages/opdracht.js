@@ -8,7 +8,7 @@ import  vscDarkPlus  from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-da
 import mdStyles from "@/styles/mdStyles.module.css";
 import opdrachtStyles from "@/styles/opdrachtStyles.module.css";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 function getLanguage(string) {
@@ -34,7 +34,7 @@ const CodeBlock = (props) => {
       <label>{copied ? "Copied!" : ""}</label>
       <CopyToClipboard text={children} onCopy={() => {setCopied(true); const timer = setTimeout(() => {
         setCopied(false);
-      }, 3000);}}>
+      }, 2000);}}>
         <SyntaxHighlighter
           wrapLines={true} // wrap long lines
           howInlineLineNumbers={false}

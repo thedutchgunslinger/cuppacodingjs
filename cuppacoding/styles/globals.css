@@ -35,3 +35,21 @@ body {
   color: red;
   outline: red solid 1px;
 }
+
+ ::-webkit-scrollbar {
+            width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+      border-radius: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: #fed43c84;
+      transition: all 0.2s ease-in-out;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+      background-color: #fed43c;
+  }

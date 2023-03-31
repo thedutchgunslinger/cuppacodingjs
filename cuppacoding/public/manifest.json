@@ -1,8 +1,8 @@
 {
-  "name": "PWA App",
-  "short_name": "App",
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "name": "cuppacoding dashboard",
+  "short_name": "CuppaCoding",
+  "theme_color": "#113428",
+  "background_color": "#113428",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

@@ -1,11 +1,13 @@
 import ExerCard from "@/components/exerCard";
 import ExerStyle from "@/styles/exercises.module.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { LayoutGroup, motion, useAnimate, useInView, stagger } from "framer-motion";
+
 
 import { gsap } from "gsap/dist/gsap";
 
-export default function Exercises() {
+export default function LoadExercises() {
   const languages = ["html", "css", "javascript", "php", "flask"];
 
    const [toggle, setToggle] = useState(false);
@@ -61,25 +63,28 @@ export default function Exercises() {
         }
       </div>
 
-      <div className={ExerStyle.container}>
-        {/* loop trough the data array */}
-        {data.map(
-          (opdracht) => (
-            console.log(opdracht),
-            (
-              <ExerCard
-                id={opdracht.id}
-                level={opdracht.level}
-                lang={opdracht.language}
-                title={opdracht.title}
-                module={opdracht.module}
-                time={opdracht.time}
-                list={isList}
-                description={opdracht.description}
-              />
+      <div className={ExerStyle.container} >
+        <LayoutGroup>
+          {/* loop trough the data array */}
+          {data.map(
+            (opdracht) => (
+              console.log(opdracht),
+              (
+
+                <ExerCard
+                  id={opdracht.id}
+                  level={opdracht.level}
+                  lang={opdracht.language}
+                  title={opdracht.title}
+                  module={opdracht.module}
+                  time={opdracht.time}
+                  list={isList}
+                  description={opdracht.description}
+                  />
+              )
             )
-          )
-        )}
+          )}
+        </LayoutGroup>
       </div>
     </>
   );

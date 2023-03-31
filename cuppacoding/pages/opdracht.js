@@ -11,6 +11,8 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
 
 
+
+
 function getLanguage(string) {
   if (!string) {
     return "unknown";
@@ -24,7 +26,7 @@ function getLanguage(string) {
 const CodeBlock = (props) => {
   const { language, value, children,className } = props;
    const [copied, setCopied] = useState(false);
-
+  	// make a variable to store mardkdown 
   
 
   console.log(props);

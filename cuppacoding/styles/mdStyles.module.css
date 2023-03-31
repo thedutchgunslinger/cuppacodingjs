@@ -66,3 +66,12 @@
   opacity: 0;
   visibility: hidden;
 }
+
+.container h1::before, .container h2::before, .container h3::before, .container h4::before, .container h5::before, .container h6::before {
+  content: '> ';  
+  font-size: 1em;
+}
+
+.container p, .container ul, .container ol {
+  max-width: 900px;
+}

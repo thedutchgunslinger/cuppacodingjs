@@ -1,9 +1,12 @@
 import NavStyle from "../styles/nav.module.css";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation"
 
 export default function Nav() {
   return (
     <div className={NavStyle.nav}>
+      <Link href="/" className={NavStyle.logoLink}>
       <div className={NavStyle.logoContainer}>
         <div>
           <svg
@@ -76,8 +79,12 @@ export default function Nav() {
         </div>
         <div>CuppaCoding</div>
       </div>
+    </Link>
       <div className={NavStyle.linksContainer}>
-        <Link href="/#modules" className={NavStyle.links}>
+        <Link href="/modules" className={NavStyle.links}>
+          {"/modules" == usePathname() && (
+            <motion.span layoutId="underline" className={NavStyle.underline} />
+          )}
           <div className={NavStyle.icon}>
             <svg
               width="20"
@@ -94,7 +101,10 @@ export default function Nav() {
           </div>
           <p>Modules</p>
         </Link>
-        <Link href="/#exercises" className={NavStyle.links}>
+        <Link href="/exercises" className={NavStyle.links}>
+          {"/exercises" == usePathname() && (
+            <motion.span layoutId="underline" className={NavStyle.underline} />
+          )}
           <div className={NavStyle.icon}>
             <svg
               width="19"
@@ -111,7 +121,10 @@ export default function Nav() {
           </div>
           <p>Exercises</p>
         </Link>
-        <Link href="/#addexec" className={NavStyle.links}>
+        <Link href="/addExercise" className={NavStyle.links}>
+          {"/addExercise" == usePathname() && (
+            <motion.span layoutId="underline" className={NavStyle.underline} />
+          )}
           <div className={NavStyle.icon}>
             <svg
               width="22"

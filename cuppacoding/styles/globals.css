@@ -31,6 +31,7 @@ body {
   );
 }
 
-h1 {
+*[data-test], *[data-test] * {
   color: red;
+  outline: red solid 1px;
 }

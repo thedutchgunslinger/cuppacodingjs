@@ -11,8 +11,6 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
 
 
-
-
 function getLanguage(string) {
   if (!string) {
     return "unknown";
@@ -32,11 +30,17 @@ const CodeBlock = (props) => {
   console.log(props);
   console.log(value);
   return (
-    <div className={mdStyles.codeContainer}>
+    <div className={mdStyles.codeContainer} data-copied={copied}>
       <label>{copied ? "Copied!" : ""}</label>
-      <CopyToClipboard text={children} onCopy={() => {setCopied(true); const timer = setTimeout(() => {
-        setCopied(false);
-      }, 2000);}}>
+      <CopyToClipboard
+        text={children}
+        onCopy={() => {
+          setCopied(true);
+          const timer = setTimeout(() => {
+            setCopied(false);
+          }, 2000);
+        }}
+      >
         <SyntaxHighlighter
           wrapLines={true} // wrap long lines
           howInlineLineNumbers={false}
@@ -73,7 +77,7 @@ export default function Opdracht() {
     <>
       <div className={HomeStyle.container}>
         <Nav />
-        <div className={opdrachtStyles.container} data-level={1}>
+        <div className={opdrachtStyles.container} data-level={1} >
           <ReactMarkdown
             className={mdStyles.container}
             components={components}

@@ -2,7 +2,7 @@ import ExerCardStyle from "../styles/exerCard.module.css";
 import ExerListStyle from "../styles/exerList.module.css";
 import Languages from "./languages";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 
 export default function ExerCard({
   id,
@@ -21,7 +21,12 @@ export default function ExerCard({
     
   return (
     <Link href={`/opdracht?id=${id}`} className={style.noline}>
-      <motion.div layout>
+      <motion.div
+        layout
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, }}
+        exit={{ opacity: 0 }}
+      >
         <div className={style.container} data-level={level}>
           <h1 className={style.title}>{title}</h1>
           <p className={style.module}>{module}</p>

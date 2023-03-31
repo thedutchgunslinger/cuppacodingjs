@@ -5,7 +5,7 @@
   vertical-align: middle;
 }
 
-.container pre::after {
+.codeContainer[data-copied=false] pre::after {
   content: 'Copy';
   position: absolute;
   top: 6px;
@@ -15,13 +15,31 @@
 
 }
 
-.container pre:hover::after {
+.codeContainer[data-copied=false] pre:hover::after {
   content: 'Copy';
   position: absolute;
   top: 6px;
   right: 5px; 
   opacity: 0.7;
 }
+.codeContainer[data-copied="true"] pre::after {
+  content: 'Copied';
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+
+}
+
+.codeContainer[data-copied="true"] pre:hover::after {
+  content: 'Copied';
+  position: absolute;
+  top: 6px;
+  right: 5px; 
+  opacity: 0.7;
+}
+
 
 .container p {
   /* display: inline-block; */

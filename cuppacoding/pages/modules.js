@@ -8,6 +8,7 @@ export default function Exercises() {
         <div className={HomeStyle.container}>
             <Nav />
             <h1 data-test>Modules</h1>
+            <p data-test    > test etaet <span>yeet <span>daaamnn</span></span></p>
         </div>
     </>
   );

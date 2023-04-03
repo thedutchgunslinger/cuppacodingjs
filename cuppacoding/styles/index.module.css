@@ -9,8 +9,8 @@
 }
 
 .link {
-    width: 30%;
- height: 800px;
+    width: 400px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;

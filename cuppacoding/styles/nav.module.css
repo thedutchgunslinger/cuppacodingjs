@@ -30,6 +30,33 @@
     position: relative;
 } 
 
+.mobileLinks {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .5rem;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--highlight-color);
+    text-decoration: none;
+    position: relative;
+    margin-right: 1rem;
+} 
+
+.mobileLinks .underline {
+    display: none;
+}
+
+.mobileContainer {
+    position: absolute;
+    background-color: var(--background-color);
+    width: 100%;
+    top: 100px;
+    left: 0;
+    padding-top: 1rem;
+    z-index: 10;
+}
+
 .logoLink {
     text-decoration: none;
 }

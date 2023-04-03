@@ -1,3 +1,6 @@
+.outerContainer {
+  position: relative;
+}
 .container {
     width: 300px;
     aspect-ratio: 3/4;
@@ -9,9 +12,51 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: all 0.2s ease-in-out;
     color: black;
-    
-    
+    position: relative; 
 }
+
+.selected {
+    outline: 3px solid var(--lightgreen-color);
+}
+.selected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;  
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.selected::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--lightgreen-color);
+  font-size: 2rem;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: 3px solid var(--lightgreen-color);
+}
+
+.input {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+}
+
 .container:hover{
     filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.5));
     animation: bounce 0.5s;

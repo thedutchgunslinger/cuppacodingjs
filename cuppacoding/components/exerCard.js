@@ -3,6 +3,8 @@ import ExerListStyle from "../styles/exerList.module.css";
 import Languages from "./languages";
 import Link from "next/link";
 import { motion, stagger } from "framer-motion";
+import { useState, useContext } from "react";
+import IdContext from "./IdContext";
 
 export default function ExerCard({
   id,
@@ -12,22 +14,53 @@ export default function ExerCard({
   time,
   description,
   lang,
-  list
+  list,
 }) {
+    const context = useContext(IdContext);
     let style = ExerCardStyle;
     if(list){
      style = ExerListStyle;
     }
+      const [toggle, setToggle] = useState(false);
+      const handleClick = () => {
+        setToggle(!toggle);
+        if(toggle){
+          removeId(id);
+        } else {
+        addId(id);
+        }
+      };
     
+      
+  function addId(id){
+    let array = [...context.ids];
+    console.log(array)
+    array.push(id);
+    context.setIds(array);
+  }
+  function removeId(id){
+    let array = [...context.ids];
+    console.log(array)
+    array.splice(array.indexOf(id), 1);
+    context.setIds(array);
+  }
   return (
-    <Link href={`/opdracht?id=${id}`} className={style.noline}>
-      <motion.div
-        layout
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, }}
-        exit={{ opacity: 0 }}
-      >
-        <div className={style.container} data-level={level}>
+    <motion.div
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={style.outerContainer}
+    >
+     
+      <input
+        type="checkbox"
+        className={style.input}
+        onClick={handleClick}
+      ></input>
+      <Link href={`/opdracht?id=${id}`} className={style.noline}>
+        <div className={toggle ? (`${style.container} ${style.selected}`) : (style.container)} data-level={level}>
+          
           <h1 className={style.title}>{title}</h1>
           <p className={style.module}>{module}</p>
           <div className={style.time}>
@@ -66,7 +99,7 @@ export default function ExerCard({
             <Languages lang={lang} />
           </div>
         </div>
-      </motion.div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 }

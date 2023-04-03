@@ -5,6 +5,10 @@
   vertical-align: middle;
 }
 
+.codeContainer pre{
+  max-width: 80vw;
+}
+
 .codeContainer[data-copied=false] pre::after {
   content: 'Copy';
   position: absolute;

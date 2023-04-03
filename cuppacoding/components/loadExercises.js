@@ -9,6 +9,7 @@ import { gsap } from "gsap/dist/gsap";
 
 export default function LoadExercises() {
   const languages = ["html", "css", "javascript", "php", "flask"];
+  
 
    const [toggle, setToggle] = useState(false);
     const handleClick = () => {

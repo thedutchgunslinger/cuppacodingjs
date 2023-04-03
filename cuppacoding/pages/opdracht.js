@@ -27,8 +27,7 @@ const CodeBlock = (props) => {
   	// make a variable to store mardkdown 
   
 
-  console.log(props);
-  console.log(value);
+ 
   return (
     <div className={mdStyles.codeContainer} data-copied={copied}>
       <label>{copied ? "Copied!" : ""}</label>

@@ -277,12 +277,6 @@ export function MobileNav(){
       {toggle ? (
         <div className={NavStyle.mobileContainer}>
           <Link href="/modules" className={NavStyle.mobileLinks}>
-            {"/modules" == usePathname() && (
-              <motion.span
-                layoutId="underline"
-                className={NavStyle.underline}
-              />
-            )}
             <div className={NavStyle.icon}>
               <svg
                 width="20"
@@ -300,12 +294,6 @@ export function MobileNav(){
             <p>Modules</p>
           </Link>
           <Link href="/exercises" className={NavStyle.mobileLinks}>
-            {"/exercises" == usePathname() && (
-              <motion.span
-                layoutId="underline"
-                className={NavStyle.underline}
-              />
-            )}
             <div className={NavStyle.icon}>
               <svg
                 width="19"
@@ -323,12 +311,6 @@ export function MobileNav(){
             <p>Exercises</p>
           </Link>
           <Link href="/addExercise" className={NavStyle.mobileLinks}>
-            {"/addExercise" == usePathname() && (
-              <motion.span
-                layoutId="underline"
-                className={NavStyle.underline}
-              />
-            )}
             <div className={NavStyle.icon}>
               <svg
                 width="22"
